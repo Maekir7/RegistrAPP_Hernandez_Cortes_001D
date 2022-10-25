@@ -21,5 +21,5 @@ Instalación alternativa:
 
   ```curl https://raw.githubusercontent.com/Maekir7/RegistrAPP_Hernandez_Cortes_001D/main/install.bat>install.bat && call install.bat```
 
-  Esto instalará el proyecto junto con sus dependencias en la carpeta `/nombre`
+  Esto instalará el proyecto junto con sus dependencias en la carpeta `/nombre` y lo ejecutará
 
