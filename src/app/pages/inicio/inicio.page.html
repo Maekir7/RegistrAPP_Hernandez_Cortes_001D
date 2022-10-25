@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Menú</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenid@ {{ nombre }}</ion-card-subtitle>
+      <ion-card-title>Escanear QR</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button (click)="onClick()" >
+        Abrir cámara
+      </ion-button>   
+    </ion-card-content>
+  </ion-card>
+
+  <!--
+  <ion-button routerLink="/alert">
+    Alert
+  </ion-button>
+
+  <ion-button routerLink="/action-sheet">
+    Action Sheet
+  </ion-button>-->
+
+</ion-content>

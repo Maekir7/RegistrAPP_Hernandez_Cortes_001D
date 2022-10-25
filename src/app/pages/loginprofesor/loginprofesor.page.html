@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Login profesores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>    
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form  [formGroup] = "formularioLogin" (keyup.enter)="Ingresar()">
+
+        <ion-item>
+          <ion-label position="floating"> RUT: </ion-label>
+          <ion-input formControlName="rut"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating"> Password: </ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+      </form>
+      <br>
+      <ion-button (click) ="Ingresar()" expand="block" fill="outline" shape="round" size="small">
+        Ingresar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/loginalumno']" fill="outline" shape="round" color="light">¿Eres alumno?
+      </ion-button>
+      <ion-button [routerLink]="['/registroprofesor']" fill="outline" shape="round" color="light">Registrarse
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-footer>

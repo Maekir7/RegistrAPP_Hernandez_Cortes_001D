@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenid@ {{ nombre }}</ion-card-subtitle>
+      <ion-card-title>Generar QR clase</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p> 
+        Eliga su Asignatura.
+        <ion-list>
+          <ion-item>
+            <ion-select interface="popover" placeholder="Presione para elegir">
+              <ion-select-option value="QA">Calidad de Software</ion-select-option>
+              <ion-select-option value="APPM">Programacion de App Moviles</ion-select-option>
+              <ion-select-option value="EL">Etica Laboral</ion-select-option>
+              <ion-select-option value="EST">Estadistica</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <qrcode *ngIf="qrVisible" [qrdata]="qrData" [width]="256" [errorCorrectionLevel]="'M'" elementType="png"></qrcode>
+
+  
+        <ion-button (click)="generarQR()">
+          Generar QR
+        </ion-button>
+      </p>
+    
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
