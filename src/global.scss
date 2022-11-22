@@ -31,3 +31,7 @@ ion-header{
 ion-footer{
     border-top:solid yellow 8px !important ;
 }
+body.scanner-active {
+    --background: transparent;
+    --ion-background-color: transparent;
+  }

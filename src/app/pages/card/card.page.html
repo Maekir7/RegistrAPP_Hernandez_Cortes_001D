@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    
+    
+    <!--<ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        text="Back"
+        color="primary"
+        mode="ios"></ion-back-button>
+    </ion-buttons>-->
+    <ion-title>Card</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p class="parrafo"> 
+        Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </p>
+    
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+      <ion-card-title>Awesome Title</ion-card-title>
+    </ion-card-header>
+
+      <img src="assets/Cachorro.jpg" class="ion-padding">
+  
+    <ion-card-content>
+      <p class="parrafo">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique itaque tenetur adipisci rem maxime ut dolorem. Repellendus voluptatem beatae debitis, ullam numquam voluptatibus aliquam porro odit ducimus, quam facere molestias.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-item href="#">
+        <ion-icon slot="start" name="wifi" class="wifi"></ion-icon>
+        <ion-label>Wifi</ion-label>
+      </ion-item>
+
+      <ion-item href="#">
+        <ion-icon slot="start" name="walk" class="walk"></ion-icon>
+        <ion-label>Walk</ion-label>
+      </ion-item>
+
+      <ion-item  href="#">
+        <ion-icon slot="start" name="warning" class="warning"></ion-icon>
+        <ion-label>Warning</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="pin"></ion-icon>
+        <ion-label>Pin</ion-label>
+        <ion-button fill="outline" shape="round" routerLink="/alert">
+          View Alert
+        </ion-button>
+      </ion-item>
+
+  </ion-card>
+
+
+
+</ion-content>

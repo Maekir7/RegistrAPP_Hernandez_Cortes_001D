@@ -42,7 +42,7 @@ export class AppComponent {
 
 }
 export class QRCodeComponent {
-  public myAngularxQrCode: string = null;
+  public myAngularxQrCode: string;
   constructor () {
     // assign a value
     this.myAngularxQrCode = 'Your QR code data string';

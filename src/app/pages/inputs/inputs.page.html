@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+    <ion-title>inputs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+  
+    <ion-list-header>
+      <ion-label>Formulario Válido: {{formulario.valid}} </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" placeholder="Nombre"
+                 name="nombre" [(ngModel)]= "usuario.nombre" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="email" placeholder="Email"
+                 name="email" value="" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password: </ion-label>
+      <ion-input type="password"	 placeholder="Contraseña"
+                 name="password" value="" [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button [disabled] ="formulario.invalid"
+            type="submit" expand="block" routerLink="/inicio">
+      Enviar
+    </ion-button>
+
+  </form>
+
+
+</ion-content>

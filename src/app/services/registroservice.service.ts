@@ -18,6 +18,7 @@ const USERS_KEY = 'my-usuarios';
 })
 export class RegistroserviceService {
 
+
   private _storage: Storage
   newUsuario: Usuario = <Usuario>{};
 
@@ -28,6 +29,12 @@ export class RegistroserviceService {
    async init(){
     const storage = await this.storage.create();
     this._storage= storage;
+  }
+  async asistir(rut:string, ramo:string){
+    return (this.http.post('https://daeloth.com/duoc/rest/alumnos/asistir', {
+      "rut":rut, 
+      "ramo":ramo
+    }));
   }
 
   async authAlumno(usuario:Usuario){

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+
+   <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <!--<ion-buttons slot="end">
+      <ion-back-button 
+        defaultHref="/"
+        text="Back"
+        color="primary"
+        mode="ios"></ion-back-button>
+    </ion-buttons>-->
+    <ion-title>Alert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button (click)="mensajeSaludo()" expand="full" fill="outline" shape="round">
+    Ok
+  </ion-button>
+
+  <ion-button (click)="okCancel()" expand="full" fill="outline" shape="round">
+    Ok-Cancel
+  </ion-button>
+
+  <ion-button (click)="input()" expand="full" fill="outline" shape="round">
+    Ingrese sus datos
+  </ion-button>
+
+</ion-content>

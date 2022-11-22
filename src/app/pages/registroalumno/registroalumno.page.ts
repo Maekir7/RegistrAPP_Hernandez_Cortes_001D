@@ -59,7 +59,7 @@ export class RegistroPage implements OnInit {
     this.newUsuario.repassUsuario = form.confirmaPass;
     if (!this.validarUser())return;
     (await this.registroService.registerAlumno(this.newUsuario)).subscribe(async (reply:any) => {
-      console.log(reply);
+      alert(reply);
       this.newUsuario = <Usuario>{};
       if(reply.code == "ER_DUP_ENTRY")return await this.showToast("Este rut ya está en uso");
 

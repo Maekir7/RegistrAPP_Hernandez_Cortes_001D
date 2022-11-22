@@ -10,10 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { Drivers } from '@ionic/storage';
 
-
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule,IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
+  imports: [BrowserModule,IonicModule.forRoot(), AppRoutingModule, HttpClientModule, 
             IonicStorageModule.forRoot({
               name: 'mydb',
               driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]

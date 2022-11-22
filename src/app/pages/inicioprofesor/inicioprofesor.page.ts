@@ -10,18 +10,23 @@ import { MenuController } from '@ionic/angular';
 
 export class InicioprofesorPage implements OnInit {
   public qrData: string = "";
+  public ramo: number = 0;
 
   constructor(private menuController: MenuController) {
-    this.qrData = 'www.duocuc.cl#asistencia#'+localStorage.getItem('rut');
+    this.qrData = 'APP/'+this.ramo+"/"+localStorage.getItem('rut');
   }
-
+  handleChange(e) {
+    this.ramo = e.detail.value;
+  }
   ngOnInit() {
   }
   generarQR(){
     this.qrVisible = true
+    this.qrData = 'APP/'+this.ramo+"/"+localStorage.getItem('rut');
+
   }
   qrVisible:boolean=false;
-  nombre:string=localStorage.getItem('nombre');
+  nombre:string=localStorage.getItem('nombre')||"";
   mostrarMenu(){
     this.menuController.open('first');
   }

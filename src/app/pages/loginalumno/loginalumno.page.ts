@@ -44,13 +44,20 @@ export class LoginPage implements OnInit {
       passUsuario: f.password,
       repassUsuario: f.password
     })).subscribe(async (x:any)=>{
-      if(!x)return await this.alertMsg();
-      console.log("ingresado");
-      localStorage.setItem('ingresado', 'true');
-      localStorage.setItem('tipo', 'alumno');
-      localStorage.setItem('nombre', x.nombre);
 
-      this.navController.navigateRoot('inicio');
+      if(!x)return await this.alertMsg();
+      try {
+        localStorage.setItem('ingresado', 'true');
+        localStorage.setItem('tipo', 'alumno');
+        localStorage.setItem('nombre', x.nombre);
+        localStorage.setItem('rut', x.rut);
+        this.navController.navigateRoot('/inicio');
+      } catch (error) {
+        alert(error)
+      }
+
+
+
     });
   }
 

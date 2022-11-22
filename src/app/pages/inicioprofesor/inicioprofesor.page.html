@@ -22,11 +22,11 @@
         Eliga su Asignatura.
         <ion-list>
           <ion-item>
-            <ion-select interface="popover" placeholder="Presione para elegir">
-              <ion-select-option value="QA">Calidad de Software</ion-select-option>
-              <ion-select-option value="APPM">Programacion de App Moviles</ion-select-option>
-              <ion-select-option value="EL">Etica Laboral</ion-select-option>
-              <ion-select-option value="EST">Estadistica</ion-select-option>
+            <ion-select interface="popover" placeholder="Presione para elegir" (ionChange)="handleChange($event)">
+              <ion-select-option value="1">Calidad de Software</ion-select-option>
+              <ion-select-option value="2">Programacion de App Moviles</ion-select-option>
+              <ion-select-option value="3">Etica Laboral</ion-select-option>
+              <ion-select-option value="4">Estadistica</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>

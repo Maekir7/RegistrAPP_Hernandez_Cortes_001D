@@ -16,6 +16,13 @@ import { LoginPage } from './loginalumno.page';
     IonicModule,
     LoginPageRoutingModule
   ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    IonicModule,
+    LoginPageRoutingModule
+  ],
   declarations: [LoginPage]
 })
 export class LoginPageModule {}
