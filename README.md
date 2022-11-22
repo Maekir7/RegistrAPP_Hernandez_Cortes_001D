@@ -11,6 +11,7 @@ Indicaciones para ejecutar el proyecto:
 - Instalar dependencias ejecutando los siguientes comandos en la raiz del proyecto:
 
   `npm i @ionic/storage-angular angularx-qrcode @capacitor-community/barcode-scanner`
+  
   `npx cap sync`
 - Iniciar el proyecto ejecutando el siguiente comando en la raiz del proyecto:
 
