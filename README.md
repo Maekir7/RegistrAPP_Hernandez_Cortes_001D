@@ -15,7 +15,7 @@ Indicaciones para ejecutar el proyecto:
 
   `ionic serve`
 
-----------------------------------------------
+---------------------------------------------
 Instalación alternativa:
 - Ejecutar el siguiente comando:
 
