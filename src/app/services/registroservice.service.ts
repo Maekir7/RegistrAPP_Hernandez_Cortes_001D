@@ -19,7 +19,7 @@ const USERS_KEY = 'my-usuarios';
 export class RegistroserviceService {
 
 
-  private _storage: Storage
+  private _storage?: Storage;
   newUsuario: Usuario = <Usuario>{};
 
   constructor(private storage: Storage, private http: HttpClient) {
@@ -30,15 +30,16 @@ export class RegistroserviceService {
     const storage = await this.storage.create();
     this._storage= storage;
   }
-  async asistir(rut:string, ramo:string){
-    return (this.http.post('https://daeloth.com/duoc/rest/alumnos/asistir', {
+  async asistir(rut:string, ramo:string, fecha:string){
+    return (this.http.post('https://daeloth.com/duoc/rest/alumnos2/asistir', {
       "rut":rut, 
-      "ramo":ramo
+      "ramo":ramo,
+      "fecha":fecha
     }));
   }
 
   async authAlumno(usuario:Usuario){
-    return (this.http.post('https://daeloth.com/duoc/rest/alumnos/login', {
+    return (this.http.post('https://daeloth.com/duoc/rest/alumnos2/login', {
       "rut":usuario.rutUsuario, 
       "pass":usuario.passUsuario
     }));
@@ -46,14 +47,14 @@ export class RegistroserviceService {
   }
 
   async authProfesor(usuario:Usuario){
-    return (this.http.post('https://daeloth.com/duoc/rest/profesores/login', {
+    return (this.http.post('https://daeloth.com/duoc/rest/profesores2/login', {
       "rut":usuario.rutUsuario, 
       "pass":usuario.passUsuario
     }));
 
   }
   async registerAlumno(usuario: Usuario){
-    return (this.http.post('https://daeloth.com/duoc/rest/alumnos/register', {
+    return (this.http.post('https://daeloth.com/duoc/rest/alumnos2/register', {
       "rut":usuario.rutUsuario, 
       "nombre":usuario.nomUsuario,
       "correo":usuario.correoUsuario,
@@ -61,7 +62,7 @@ export class RegistroserviceService {
     }));
   }
   async registerProfesor(usuario: Usuario){
-    return (this.http.post('https://daeloth.com/duoc/rest/profesores/register', {
+    return (this.http.post('https://daeloth.com/duoc/rest/profesores2/register', {
       "rut":usuario.rutUsuario, 
       "nombre":usuario.nomUsuario,
       "correo":usuario.correoUsuario,

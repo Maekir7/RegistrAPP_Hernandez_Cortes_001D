@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
-
+import { MenuController, SelectCustomEvent } from '@ionic/angular';
+import { format, parseISO } from 'date-fns';
 
 @Component({
   selector: 'app-inicioprofesor',
@@ -10,19 +10,23 @@ import { MenuController } from '@ionic/angular';
 
 export class InicioprofesorPage implements OnInit {
   public qrData: string = "";
-  public ramo: number = 0;
+  public ramo: string = "";
+  public fecha: string = "";
 
   constructor(private menuController: MenuController) {
-    this.qrData = 'APP/'+this.ramo+"/"+localStorage.getItem('rut');
+    this.qrData = this.fecha;
   }
-  handleChange(e) {
-    this.ramo = e.detail.value;
+  updateRamo(c:any) {
+    this.ramo = c.detail.value;
+  }  
+  updateFecha(c:any) {
+    this.fecha = format(parseISO(c.detail.value), 'ddmmyy');
   }
   ngOnInit() {
   }
   generarQR(){
     this.qrVisible = true
-    this.qrData = 'APP/'+this.ramo+"/"+localStorage.getItem('rut');
+    this.qrData = 'APP/'+this.ramo+"/"+this.fecha+"/"+localStorage.getItem('rut');
 
   }
   qrVisible:boolean=false;

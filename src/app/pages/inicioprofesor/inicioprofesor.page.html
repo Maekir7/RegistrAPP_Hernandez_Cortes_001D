@@ -20,23 +20,32 @@
     <ion-card-content>
       <p> 
         Eliga su Asignatura.
+      </p>
         <ion-list>
           <ion-item>
-            <ion-select interface="popover" placeholder="Presione para elegir" (ionChange)="handleChange($event)">
-              <ion-select-option value="1">Calidad de Software</ion-select-option>
-              <ion-select-option value="2">Programacion de App Moviles</ion-select-option>
-              <ion-select-option value="3">Etica Laboral</ion-select-option>
-              <ion-select-option value="4">Estadistica</ion-select-option>
+            <ion-select interface="popover" placeholder="Presione para elegir" (ionChange)="updateRamo($event)">
+              <ion-select-option value="0001d">0001d | Calidad de Software</ion-select-option>
+              <ion-select-option value="0002d">0002d | Programacion de App Moviles</ion-select-option>
+              <ion-select-option value="0003d">0003d | Etica Laboral</ion-select-option>
+              <ion-select-option value="0004d">0004d | Estadistica</ion-select-option>
             </ion-select>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime id="datetime" (ionChange)="updateFecha($event)"></ion-datetime>
+              </ng-template>
+            </ion-modal>
           </ion-item>
         </ion-list>
-        <qrcode *ngIf="qrVisible" [qrdata]="qrData" [width]="256" [errorCorrectionLevel]="'M'" elementType="png"></qrcode>
-
-  
         <ion-button (click)="generarQR()">
           Generar QR
         </ion-button>
-      </p>
+        <div class="qrcodeImage">
+          <qrcode *ngIf="qrVisible" [qrdata]="qrData" [width]="256" [cssClass]="'center'" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>
+  
+
+      
     
     </ion-card-content>
   </ion-card>

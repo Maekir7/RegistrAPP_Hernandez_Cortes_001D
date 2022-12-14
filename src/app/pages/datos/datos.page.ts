@@ -48,7 +48,7 @@ export class DatosPage implements OnInit {
     })
   }
 
-  async showToast(msg){
+  async showToast(msg: string){
     const toast = await this.toastController.create({ 
       message : msg,
       duration: 2000

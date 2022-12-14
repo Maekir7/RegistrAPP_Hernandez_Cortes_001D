@@ -24,8 +24,9 @@ export class InicioPage implements OnInit {
     const result = await BarcodeScanner.startScan();
     var rut = localStorage.getItem("rut")||"";
     var ramo = result.content?.split("/")[1]||"";
+    var fecha = result.content?.split("/")[2]||"";
     
-    (await this.registroService.asistir(rut,ramo)).subscribe(async (x:any)=>{
+    (await this.registroService.asistir(rut,ramo,fecha)).subscribe(async (x:any)=>{
       if(!x.nombre)return alert("QR inválido");
       try {
         alert("Asistencia ingresada en ramo " + x.nombre)
@@ -43,14 +44,6 @@ export class InicioPage implements OnInit {
   mostrarMenu(){
     this.menuController.open('first');
   }
-  qrResultString: string | null;
 
-  clearResult(): void {
-    this.qrResultString = null;
-  }
-
-  onCodeResult(resultString: string) {
-    this.qrResultString = resultString;
-  }
 
 }
